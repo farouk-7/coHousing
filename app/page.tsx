@@ -132,7 +132,7 @@ export default function Home() {
           </p>
         </div>
         <div className="mt-5">
-          <div className="flex flex-col md:flex-row justify-between  gap-5">
+          <div className="flex flex-wrap justify-center items-center md:flex-row md:justify-between  gap-5">
             {userData?.map((user) => (
               <div key={user.id} className="mb-4 ">
                 <Image
@@ -155,7 +155,7 @@ export default function Home() {
           <p className="text-3xl text-center md:text-start font-bold py-2">Trusted By</p>
         </div>
         <div className="mt-5">
-          <div className="flex flex-col md:flex-row justify-center items-center gap-5">
+          <div className="flex flex-wrap md:flex-row justify-center items-center gap-5">
             {trusteeData?.map((trustee) => (
               <div key={trustee.id} className="mb-4 ">
                 <Image src={trustee.image} alt={""} className="w-fit   mb-2" />
