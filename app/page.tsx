@@ -132,7 +132,7 @@ export default function Home() {
           </p>
         </div>
         <div className="mt-5">
-          <div className="flex flex-wrap justify-center items-center md:flex-row md:justify-between  gap-5">
+          <div className="flex flex-col justify-center items-center md:flex-row md:justify-between  gap-5">
             {userData?.map((user) => (
               <div key={user.id} className="mb-4 ">
                 <Image
