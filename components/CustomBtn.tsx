@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import { Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils"; // if using ShadCN's `cn` utility
-import { MdEdit } from "react-icons/md";
+
 
 type CustomBtnProps = {
   text?: string;
@@ -11,7 +11,8 @@ type CustomBtnProps = {
   hover?: string;
   w?: string;
   loading?: boolean;
-  icon?: any;
+  // icon?: any;
+  icon?: React.ReactNode;
   textColor?: string;
   
 };
