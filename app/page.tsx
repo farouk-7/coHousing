@@ -1,103 +1,179 @@
 import Image from "next/image";
+import hero from "../public/hero.png";
+import CustomBtn from "@/components/CustomBtn";
+import { MdSupervisorAccount } from "react-icons/md";
+import { BsCalculator, BsSearch } from "react-icons/bs";
+import user1 from "../public/user1.png";
+import user2 from "../public/user2.png";
+import user3 from "../public/user3.png";
+import trustee1 from "../public/trustee1.png";
+import trustee2 from "../public/trustee2.png";
+import trustee3 from "../public/trustee3.png";
+import trustee4 from "../public/trustee4.png";
+
+const userData = [
+  {
+    id: 1,
+    name: "John Doe",
+    image: user1,
+    testimonial:
+      "This platform has transformed my co-living experience. The rent splitting calculator is a game-changer!",
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    image: user2,
+    testimonial:
+      "The rent-splitting calculator is a game-changer. No more awkward conversations about bills.",
+  },
+  {
+    id: 3,
+    name: "Alice Johnson",
+    image: user3,
+    testimonial:
+      "I love the user profiles. It helped me find roommates who share my interests and lifestyle.",
+  },
+  {
+    id: 4,
+    name: "Bob Brown",
+    image: user1,
+    testimonial:
+      "The search filters made it easy to find a place that fits my budget and preferences.",
+  },
+];
+const trusteeData = [
+  {
+    id: 1,
+    image: trustee1,
+  },
+  {
+    id: 2,
+    image: trustee2,
+  },
+  {
+    id: 3,
+    image: trustee3,
+  },
+  {
+    id: 4,
+    image: trustee4,
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
+      <div className="flex  justify-center relative">
+        <div>
+          <div className="inset-0 opacity-100">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={hero}
+              alt="Hero Image"
+              className="object-cover"
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <p className="text-[20px] md:text-[50px] font-bold text-white">
+              Find your perfect co-living space
+            </p>
+            <p className="py-3 md:py-5 max-w-[600px] font-bold text-white text-center px-auto">
+              Discover shared housing options and split rent fairly with
+              roommates. Join a community of like-minded individuals.
+            </p>
+            <div>
+              <CustomBtn text="Get Started" bg="bg-blue-700" />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+      <div className="flex flex-col">
+        <div className="mt-10">
+          <p className="text-2xl text-center md:text-start md:text-3xl font-bold py-2">Key Features</p>
+          <p className="text-[20px] text-center md:text-start">
+            Explore the features that make co-living easy and enjoyable.
+          </p>
+        </div>
+        <div className="flex flex-col md:flex-row justify-between mt-5 gap-[20px]">
+          <div className="border-1 border-gray-300 bg-amber-100 p-2 rounded-lg  ">
+            <MdSupervisorAccount size={25} />
+            <p className="font-bold text-[18px] py-2">User Profile</p>
+            <p className="text-[#637587] font-semibold">
+              Create detailed profiles to showcase your lifestyle and
+              preferences.
+            </p>
+          </div>
+          <div className="border-1 border-gray-300 bg-amber-100 p-2 rounded-lg  ">
+            <BsSearch size={25} />
+            <p className="font-bold text-[18px] py-2">Search Filters</p>
+            <p className="text-[#637587] font-semibold">
+              Find housing that matches your criteria with advanced search
+              filters.
+            </p>
+          </div>
+          <div className="border-1 border-gray-300 bg-amber-100 p-2 rounded-lg  ">
+            <BsCalculator size={25} />
+            <p className="font-bold text-[18px] py-2">
+              Rent Spliting Calculator
+            </p>
+            <p className="text-[#637587] font-semibold">
+              Calculate and split rent fairly with roommates using our built-in
+              tool
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col">
+        <div className="mt-10">
+          <p className="text-3xl text-center md:text-start font-bold py-2">Testimonials</p>
+          <p className="text-[20px] text-center md:text-start">
+            Few of our users have some things to say about us.
+          </p>
+        </div>
+        <div className="mt-5">
+          <div className="flex flex-col md:flex-row justify-between  gap-5">
+            {userData?.map((user) => (
+              <div key={user.id} className="mb-4 ">
+                <Image
+                  src={user.image}
+                  alt={user.name}
+                  className="w-fit   mb-2"
+                />
+                <p className="font-bold text-[18px]">{user.name}</p>
+                <p className="text-[#637587] max-w-[300px] text-sm font-semibold">
+                  {user.testimonial}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col">
+        <div className="mt-10">
+          <p className="text-3xl text-center md:text-start font-bold py-2">Trusted By</p>
+        </div>
+        <div className="mt-5">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-5">
+            {trusteeData?.map((trustee) => (
+              <div key={trustee.id} className="mb-4 ">
+                <Image src={trustee.image} alt={""} className="w-fit   mb-2" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center justify-center mt-10">
+        <p className="text-[30px] text-center font-bold align-center">
+          Ready to find your co-living space
+        </p>
+        <p className="text-center">Join co-living today and start your journey to shared living</p>
+        <div className="mt-5">
+          <CustomBtn text="Get Started" bg="bg-blue-700" />
+        </div>
+      </div>
     </div>
   );
 }
