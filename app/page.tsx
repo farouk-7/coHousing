@@ -138,10 +138,10 @@ export default function Home() {
                 <Image
                   src={user.image}
                   alt={user.name}
-                  className="w-fit   mb-2"
+                  className="w-fit h-[300px] mb-2"
                 />
-                <p className="font-bold text-[18px]">{user.name}</p>
-                <p className="text-[#637587] max-w-[300px] text-sm font-semibold">
+                <p className="font-bold text-[18px] text-center">{user.name}</p>
+                <p className="text-[#637587] max-w-[300px] text-sm font-semibold text-center">
                   {user.testimonial}
                 </p>
               </div>
